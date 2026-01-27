@@ -1,0 +1,27 @@
+Step 1: Install Node JS
+        Make sure that node is installed or not
+        > node -v 
+        > npm -v 
+
+Step 2: Create React Project
+        > npx create-react-app react-hello
+        > cd react-hello
+        > npm start
+    
+        http://localhost:3000/
+
+Step 3: Modify src/App.js to 
+        import './App.css';
+
+        ```
+        function App() {
+        return(
+            <div>
+            <h1>Hello World from React</h1>
+            </div>
+        )
+        }
+
+        export default App;
+        ```
+

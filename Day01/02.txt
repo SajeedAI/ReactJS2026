@@ -1,0 +1,111 @@
+react-hello/
+│
+├── node_modules/
+├── public/
+├── src/
+│   ├── App.css
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── logo.svg
+│   ├── reportWebVitals.js
+│   ├── setupTests.js
+│
+├── .gitignore
+├── package-lock.json
+├── package.json
+└── README.md
+
+🔵 Root Folder Files
+✅ node_modules/
+    Contains all installed npm packages.
+    Auto-created when you run:
+    > npm install
+    ❌ Do NOT modify manually.
+    ❌ Not pushed to GitHub.
+
+✅ package.json
+Main configuration file.
+    Contains:
+        Project name
+        Dependencies
+        Scripts like:
+            > npm start
+            > npm run build
+            > npm test
+
+✅ package-lock.json
+    Locks exact versions of dependencies.
+    Helps keep the same versions across machines.
+
+✅ .gitignore
+Tells Git which files to ignore.
+Usually ignores:
+    node_modules/
+    build/
+
+✅ README.md
+Documentation file.
+Explains:
+    Project setup
+    How to run
+    About the project.
+
+🟢 public/ Folder
+Contains static files.
+Example:
+    index.html → main HTML file.
+React app is injected into this file.
+👉 You rarely touch this folder except favicon/title/meta tags.
+
+🟡 src/ Folder (MAIN CODE AREA)
+This is where we write React code.
+
+✅ index.js
+    Entry point of the React app.
+    Renders <App /> component into HTML.
+    Example:
+    ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+
+✅ App.js
+    Main root component.
+    UI starts from here.
+    You write JSX here.
+
+✅ App.css
+    Styles for App component.
+
+✅ index.css
+    Global styles for the entire app.
+
+✅ App.test.js
+    Used for testing App component.
+    Uses Jest + React Testing Library.
+
+✅ logo.svg
+    Sample image/logo used in default template.
+
+✅ reportWebVitals.js
+    Used for performance monitoring.    
+    Measures page speed metrics.
+
+✅ setupTests.js
+    Test setup file.
+    Runs before tests start.
+
+🎯 One-Line Student Friendly Version
+
+| File/Folder  | Purpose            |
+| ------------ | ------------------ |
+| node_modules | Installed packages |
+| public       | Static HTML/assets |
+| src          | React source code  |
+| index.js     | App entry point    |
+| App.js       | Main component     |
+| App.css      | App styling        |
+| index.css    | Global styles      |
+| package.json | Project config     |
+| .gitignore   | Git ignored files  |
+| README.md    | Docs               |
+
