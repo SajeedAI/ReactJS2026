@@ -1,0 +1,103 @@
+# what are probs?
+probs = data passesd from parent component -> child component
+        they are read-only (child cannot change them)   
+
+# what are states?
+state = data managed inside a component 
+        it can change using setState(or useState in functional components)
+
+Step 1: Create React Project
+----------------------------
+        > npx create-react-app react-states-props
+        > cd react-states-props
+        > npm start
+    
+        http://localhost:3000/
+
+
+Step 2: Create components Folder
+--------------------------------
+Inside src, create folder
+src/components/
+
+Step 3: Create Student component File 
+-------------------------------------
+Inside components:
+Student.js
+
+function Student(props){
+
+        return(
+                <div>
+                        <h2>Student Component</h2>
+                        <p>Name: {props.name}</p>
+                        <p>Name: {props.course}</p>
+                </div>
+        );
+}
+export default Student;
+
+Step 4: import Student in App.js
+--------------------------------
+Open App.js 
+import Student from "./components/Student"
+
+function App(){
+        return (
+                <div>
+                        <h1>Main App Component<h1>
+
+                        <Student name="Rahul" course="React"/>
+                        <Student name="Anita" course="Node"/>
+                </div>
+        )
+}
+export default App;
+
+
+🧠 What Happened?
+• We created Student component
+• App imported it
+• App passed data using props
+• Student displayed props
+
+STEP 5: Add State in Student Component
+--------------------------------------
+Now update Student.js
+import { useState } from "react";
+
+function Student(props) {
+
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <h2>Student Component</h2>
+
+      <p>Name: {props.name}</p>
+      <p>Course: {props.course}</p>
+
+      <p>Clicks: {count}</p>
+
+      <button onClick={() => setCount(count + 1)}>
+        Increase
+      </button>
+    </div>
+  );
+}
+
+export default Student;
+
+🎯 Now Student Has:
+
+✅ Props → name, course
+✅ State → count
+✅ Button event
+✅ Re-render on state change
+
+📌 FINAL Project Structure
+src/
+ ├── components/
+ │     └── Student.js
+ ├── App.js
+ └── index.js
