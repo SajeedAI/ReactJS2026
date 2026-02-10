@@ -1,0 +1,261 @@
+Step 1:
+=======
+
+> npx create-react-app edutech-classes-website
+
+> sajeedsaif@Sajeeds-MacBook-Air 03_WebOne % ls
+edutech-classes-website
+
+> sajeedsaif@Sajeeds-MacBook-Air 03_WebOne % cd edutech-classes-website
+
+> sajeedsaif@Sajeeds-MacBook-Air edutech-classes-website % npm start
+
+
+📁 STEP 2 — Final Folder Structure
+==================================
+src/
+ ├── components/
+ │     ├── Navbar/
+ │     │     ├── Navbar.js
+ │     │     └── Navbar.css
+ │     │
+ │     ├── Footer/
+ │     │     ├── Footer.js
+ │     │     └── Footer.css
+ │
+ ├── pages/
+ │     ├── Home/
+ │     │     ├── Home.js
+ │     │     └── Home.css
+ │     │
+ │     └── Classes/
+ │           ├── Classes.js
+ │           └── Classes.css
+ │
+ ├── routes/
+ │     └── AppRoutes.js
+ │
+ ├── App.js
+ ├── index.js
+ └── index.css
+
+
+📦 STEP 3 — Install React Router
+================================
+> npm install react-router-dom
+
+🧭 STEP 4 — Routing Setup
+=========================
+import { Routes, Route } from "react-router-dom";
+import Home from "../pages/Home/Home";
+import Classes from "../pages/Classes/Classes";
+
+export default function AppRoutes() {
+  return (
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/classes" element={<Classes />} />
+    </Routes>
+  );
+}
+
+
+🚀 STEP 5 — App.js
+==================
+✅ src/App.js
+
+import Navbar from "./components/Navbar/Navbar";
+import Footer from "./components/Footer/Footer";
+import AppRoutes from "./routes/AppRoutes";
+
+function App() {
+  return (
+    <>
+      <Navbar />
+      <AppRoutes />
+      <Footer />
+    </>
+  );
+}
+
+export default App;
+
+⚡ STEP 6 — index.js
+===================
+✅ src/index.js
+
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
+import App from "./App";
+import "./index.css";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+root.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
+🧭 STEP 7 — Navbar Component
+===========================
+✅ components/Navbar/Navbar.js
+
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+
+function Navbar() {
+  return (
+    <nav className="navbar">
+      <h2 className="logo">EduTech</h2>
+
+      <ul className="nav-links">
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/classes">Classes</Link></li>
+        <li><Link to="/demo">Demo</Link></li>
+        <li><Link to="/login">Login</Link></li>
+      </ul>
+    </nav>
+  );
+}
+
+export default Navbar;
+
+🎨 Navbar.css
+=============
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #0d47a1;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+🏠 STEP 8 — Home Page
+=====================
+✅ pages/Home/Home.js
+
+import "./Home.css";
+
+function Home() {
+  return (
+    <div className="home">
+      <section className="hero">
+        <h1>Learning for Classes 1 to 10</h1>
+        <p>Live Classes • Recorded Videos • Tests • Progress Tracking</p>
+        <button>Book Free Demo</button>
+      </section>
+    </div>
+  );
+}
+
+export default Home;
+
+🎨 Home.css
+===========
+.hero {
+  text-align: center;
+  padding: 80px;
+  background: linear-gradient(to right, #1976d2, #42a5f5);
+  color: white;
+}
+
+.hero button {
+  padding: 12px 25px;
+  border: none;
+  background: white;
+  color: #1976d2;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+📚 STEP 9 — Classes Page
+========================
+✅ pages/Classes/Classes.js
+
+import "./Classes.css";
+
+const classes = Array.from({ length: 10 }, (_, i) => i + 1);
+
+function Classes() {
+  return (
+    <div className="classes-page">
+      <h2>Choose Your Class</h2>
+
+      <div className="class-grid">
+        {classes.map((cls) => (
+          <div key={cls} className="class-card">
+            Class {cls}
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export default Classes;
+
+🎨 Classes.css
+==============
+.classes-page {
+  padding: 50px;
+  text-align: center;
+}
+
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.class-card {
+  padding: 30px;
+  background: #f5f5f5;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.class-card:hover {
+  background: #1976d2;
+  color: white;
+}
+
+🦶 STEP 10 — Footer
+===================
+✅ components/Footer/Footer.js
+
+import "./Footer.css";
+
+function Footer() {
+  return (
+    <footer className="footer">
+      <p>© 2026 EduTech Academy. All rights reserved.</p>
+    </footer>
+  );
+}
+
+export default Footer;
+
+🎨 Footer.css
+=============
+.footer {
+  text-align: center;
+  padding: 15px;
+  background: #0d47a1;
+  color: white;
+}
