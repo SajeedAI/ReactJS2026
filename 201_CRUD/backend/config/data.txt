@@ -1,0 +1,137 @@
+POST Method:
+============
+http://127.0.0.1:3001/api/students
+
+{   
+    "studentId": "STU001",
+    "studentName": "Anjali",
+    "studentEmail": "anjali@gmail.com",
+    "studentClass": "6th",
+    "parentName": "Suresh",
+    "parentContactNumber": "9123456780",
+    "address": "Hyderabad"
+}
+
+Get Method 
+==========
+http://127.0.0.1:3001/api/students/69994a62f9a0d4fbe2d64a9c
+{
+    "_id": "69994a62f9a0d4fbe2d64a9c",
+    "studentId": "STU001",
+    "studentName": "Anjali",
+    "studentEmail": "anjali@gmail.com",
+    "studentClass": "6th",
+    "parentName": "Suresh",
+    "parentContactNumber": "9123456780",
+    "address": "Hyderabad",
+    "createdAt": "2026-02-21T06:02:10.176Z",
+    "updatedAt": "2026-02-21T06:02:10.176Z",
+    "__v": 0
+}
+
+Get All 
+=======
+http://127.0.0.1:3001/api/students
+[
+    {
+        "_id": "69994a62f9a0d4fbe2d64a9c",
+        "studentId": "STU001",
+        "studentName": "Anjali",
+        "studentEmail": "anjali@gmail.com",
+        "studentClass": "6th",
+        "parentName": "Suresh",
+        "parentContactNumber": "9123456780",
+        "address": "Hyderabad",
+        "createdAt": "2026-02-21T06:02:10.176Z",
+        "updatedAt": "2026-02-21T06:02:10.176Z",
+        "__v": 0
+    },
+    {
+        "_id": "69994a97f9a0d4fbe2d64a9e",
+        "studentId": "STU002",
+        "studentName": "Rahul",
+        "studentEmail": "rahul@gmail.com",
+        "studentClass": "7th",
+        "parentName": "Mahesh",
+        "parentContactNumber": "9234567810",
+        "address": "Secunderabad",
+        "createdAt": "2026-02-21T06:03:03.951Z",
+        "updatedAt": "2026-02-21T06:03:03.951Z",
+        "__v": 0
+    },
+    {
+        "_id": "69994aa4f9a0d4fbe2d64aa0",
+        "studentId": "STU003",
+        "studentName": "Sneha",
+        "studentEmail": "sneha@gmail.com",
+        "studentClass": "5th",
+        "parentName": "Ramesh",
+        "parentContactNumber": "9345678120",
+        "address": "Kukatpally",
+        "createdAt": "2026-02-21T06:03:16.006Z",
+        "updatedAt": "2026-02-21T06:03:16.006Z",
+        "__v": 0
+    },
+    {
+        "_id": "69994ab4f9a0d4fbe2d64aa2",
+        "studentId": "STU004",
+        "studentName": "Arjun",
+        "studentEmail": "arjun@gmail.com",
+        "studentClass": "8th",
+        "parentName": "Kiran",
+        "parentContactNumber": "9456781230",
+        "address": "Miyapur",
+        "createdAt": "2026-02-21T06:03:32.347Z",
+        "updatedAt": "2026-02-21T06:03:32.347Z",
+        "__v": 0
+    },
+    {
+        "_id": "69994ac1f9a0d4fbe2d64aa4",
+        "studentId": "STU005",
+        "studentName": "Divya",
+        "studentEmail": "divya@gmail.com",
+        "studentClass": "6th",
+        "parentName": "Prasad",
+        "parentContactNumber": "9567812340",
+        "address": "Ameerpet",
+        "createdAt": "2026-02-21T06:03:45.255Z",
+        "updatedAt": "2026-02-21T06:03:45.255Z",
+        "__v": 0
+    }
+]
+
+# Put Method 
+============
+http://127.0.0.1:3001/api/students/69994a62f9a0d4fbe2d64a9c
+
+{
+    "studentId": "STU001",
+    "studentName": "Anjali",
+    "studentEmail": "anjali@gmail.com",
+    "studentClass": "7th",
+    "parentName": "Suresh",
+    "parentContactNumber": "9123456780",
+    "address": "Hyderabad"
+}
+
+output:
+{
+    "_id": "69994a62f9a0d4fbe2d64a9c",
+    "studentId": "STU001",
+    "studentName": "Anjali",
+    "studentEmail": "anjali@gmail.com",
+    "studentClass": "6th",
+    "parentName": "Suresh",
+    "parentContactNumber": "9123456780",
+    "address": "Hyderabad",
+    "createdAt": "2026-02-21T06:02:10.176Z",
+    "updatedAt": "2026-02-21T06:02:10.176Z",
+    "__v": 0
+}
+
+# Delete Method 
+==============
+http://127.0.0.1:3001/api/students/69994a62f9a0d4fbe2d64a9c
+{
+    "message": "Student Deleted"
+}

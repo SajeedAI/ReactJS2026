@@ -1,63 +1,109 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+/* NAVBAR */
 .navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  background: #dd8a36;
-  color: white;
-  position: relative;
+  padding: 5px 8%;
+
+  background: linear-gradient(90deg, #0d47a1, #00e5ff, #1976d2);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+
+  border-radius: 12px;   /* ✅ Added radius */
+  margin: 10px 20px;     /* ✅ Optional spacing from edges */
 }
 
+/* LOGO */
 .logo {
-  font-size: 20px;
-  font-weight: bold;
+  font-size: 22px;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 1px;
 }
 
-/* Desktop Menu */
+/* DESKTOP MENU */
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  transition: all 0.4s ease;
 }
 
 .nav-links li {
-  display: inline-flex;
+  position: relative;
 }
 
 .nav-links a {
-  color: white;
   text-decoration: none;
-  font-weight: 900;
-  font-family: 'Trebuchet MS', Arial, sans-serif;
+  color: white;
+  font-weight: 600;
+  position: relative;
+  transition: 0.3s;
 }
 
-/* Burger Icon */
+/* Hover underline animation */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -5px;
+  background: white;
+  transition: 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* BURGER */
 .menu-icon {
   display: none;
   font-size: 26px;
+  color: white;
   cursor: pointer;
 }
 
-/* 📱 Mobile View */
+/* 📱 MOBILE */
 @media (max-width: 768px) {
+
   .menu-icon {
     display: block;
   }
 
   .nav-links {
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 0;
-    background: #dd8a36;
     width: 100%;
+
+    background: linear-gradient(90deg, #0d47a1, #519aa2, #1976d2);
+    backdrop-filter: blur(15px);
+
     flex-direction: column;
     align-items: center;
-    gap: 15px;
-    padding: 20px 0;
-    display: none;
+    gap: 20px;
+    padding: 30px 0;
+
+    transform: translateY(-150%);
+    opacity: 0;
   }
 
   .nav-links.active {
-    display: flex;
+    transform: translateY(0);
+    opacity: 1;
   }
 }

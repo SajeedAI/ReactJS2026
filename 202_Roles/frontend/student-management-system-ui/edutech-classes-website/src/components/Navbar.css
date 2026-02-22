@@ -1,0 +1,37 @@
+/* Navbar.css */
+.navbar {
+  display: flex;
+  gap: 15px;
+  background: linear-gradient(90deg, #0d47a1, #00e5ff);
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: white;
+  align-items: center;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  background: #d32f2f;
+  color: white;
+  transition: 0.3s;
+}
+
+.navbar button:hover {
+  background: #b71c1c;
+  transform: scale(1.05);
+}

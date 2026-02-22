@@ -1,0 +1,177 @@
+npm init -y
+npm install express mongoose bcryptjs jsonwebtoken dotenv cors
+npm install nodemon --save-dev
+npm install multer
+
+# Normal User Can register
+POST: http://localhost:5050/api/auth/register
+{"name":"Sajeed","email":"sajeed@gmail.com","password":"123456"}
+
+{
+    "name": "Sajeed",
+    "email": "sajeed@gmail.com",
+    "password": "$2b$10$RaWzQRbkjd9hTogTE7LTPezBkOLriI/SFapQB7u9mKvOg7We/oVDi",
+    "role": "USER",
+    "_id": "699ab94f86ada4f108da7edf",
+    "createdAt": "2026-02-22T08:07:43.889Z",
+    "updatedAt": "2026-02-22T08:07:43.889Z",
+    "__v": 0
+}
+
+# Normal User can login
+POST: http://localhost:5050/api/auth/login
+{
+  "email": "sajeed@gmail.com",
+  "password": "123456"
+}
+
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OWFiOTRmODZhZGE0ZjEwOGRhN2VkZiIsInJvbGUiOiJVU0VSIiwiaWF0IjoxNzcxNzQ3ODI1LCJleHAiOjE3NzE4MzQyMjV9.Mb-klcgWS9Ld7sztT6qJzHKbdt1ljiYT9FMZuEvSGbM",
+    "role": "USER"
+}
+
+# Admin can login 
+Post: http://localhost:5050/api/auth/admin-login
+{
+  "email": "admin@gmail.com",
+  "password": "123456"
+}
+
+{
+    "message": "Admin login success",
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5OWFiZmRjM2RjNDU3NjVkZjY2NDZlMSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTc3MTc0OTM3NiwiZXhwIjoxNzcxODM1Nzc2fQ.yDV4D_Hh00Kir_HWYepp_yKvBg96lmIU7Wexj8A-iX8",
+    "user": {
+        "_id": "699abfdc3dc45765df6646e1",
+        "name": "Super Admin",
+        "email": "admin@gmail.com",
+        "password": "$2b$10$t7le1k3VsVkPZn17eu3B/eyFev48fxmno2CN0tJP5RbZJVRBrA7AS",
+        "role": "ADMIN",
+        "createdAt": "2026-02-22T08:35:40.597Z",
+        "updatedAt": "2026-02-22T08:35:40.597Z",
+        "__v": 0
+    }
+}
+
+# Admin can see all users 
+Get: http://localhost:5050/api/users
+[
+    {
+        "_id": "699ab94f86ada4f108da7edf",
+        "name": "Sajeed",
+        "email": "sajeed@gmail.com",
+        "password": "$2b$10$RaWzQRbkjd9hTogTE7LTPezBkOLriI/SFapQB7u9mKvOg7We/oVDi",
+        "role": "USER",
+        "createdAt": "2026-02-22T08:07:43.889Z",
+        "updatedAt": "2026-02-22T08:07:43.889Z",
+        "__v": 0
+    },
+    {
+        "_id": "699abfdc3dc45765df6646e1",
+        "name": "Super Admin",
+        "email": "admin@gmail.com",
+        "password": "$2b$10$t7le1k3VsVkPZn17eu3B/eyFev48fxmno2CN0tJP5RbZJVRBrA7AS",
+        "role": "ADMIN",
+        "createdAt": "2026-02-22T08:35:40.597Z",
+        "updatedAt": "2026-02-22T08:35:40.597Z",
+        "__v": 0
+    }
+]
+
+# Admin can change to (User to Admin)
+# put: http://localhost:5050/api/users/699ab94f86ada4f108da7edf/role
+{
+  "role": "ADMIN"
+}
+
+# http://localhost:5050/api/users/699ab94f86ada4f108da7edf/role
+{
+  "role": "STAFF"
+}
+
+{
+    "_id": "699ab94f86ada4f108da7edf",
+    "name": "Sajeed",
+    "email": "sajeed@gmail.com",
+    "password": "$2b$10$RaWzQRbkjd9hTogTE7LTPezBkOLriI/SFapQB7u9mKvOg7We/oVDi",
+    "role": "STAFF",
+    "createdAt": "2026-02-22T08:07:43.889Z",
+    "updatedAt": "2026-02-22T09:19:37.867Z",
+    "__v": 0
+}
+
+# student details created after login 
+http://localhost:5050/api/students
+{
+  "studentName": "Ayaan",
+  "studentParentsName": "Rahman",
+  "studentParentContact": "9876543210",
+  "studentAddress": "Hyderabad",
+  "studentClass": "6th"
+}
+
+{
+    "userId": "699ab94f86ada4f108da7edf",
+    "studentName": "Ayaan",
+    "studentParentsName": "Rahman",
+    "studentParentContact": "9876543210",
+    "studentAddress": "Hyderabad",
+    "studentClass": "6th",
+    "_id": "699ad0ea6936866418ed3c89",
+    "createdAt": "2026-02-22T09:48:26.551Z",
+    "updatedAt": "2026-02-22T09:48:26.551Z",
+    "__v": 0
+}
+
+# Get details
+# http://localhost:5050/api/students/me
+{
+    "_id": "699ad0ea6936866418ed3c89",
+    "userId": "699ab94f86ada4f108da7edf",
+    "studentName": "Ayaan",
+    "studentParentsName": "Rahman",
+    "studentParentContact": "9876543210",
+    "studentAddress": "Hyderabad",
+    "studentClass": "6th",
+    "createdAt": "2026-02-22T09:48:26.551Z",
+    "updatedAt": "2026-02-22T09:48:26.551Z",
+    "__v": 0
+}
+
+# admin can see all students 
+http://localhost:5050/api/students
+[
+    {
+        "_id": "699ad0ea6936866418ed3c89",
+        "userId": {
+            "_id": "699ab94f86ada4f108da7edf",
+            "name": "Sajeed",
+            "email": "sajeed@gmail.com",
+            "role": "USER"
+        },
+        "studentName": "Ayaan",
+        "studentParentsName": "Rahman",
+        "studentParentContact": "9876543210",
+        "studentAddress": "Hyderabad",
+        "studentClass": "6th",
+        "createdAt": "2026-02-22T09:48:26.551Z",
+        "updatedAt": "2026-02-22T09:48:26.551Z",
+        "__v": 0
+    },
+    {
+        "_id": "699ad2805f4741dea9f8d41c",
+        "userId": {
+            "_id": "699ab94f86ada4f108da7edf",
+            "name": "Sajeed",
+            "email": "sajeed@gmail.com",
+            "role": "USER"
+        },
+        "studentName": "saif",
+        "studentParentsName": "Rahman",
+        "studentParentContact": "9876543210",
+        "studentAddress": "Hyderabad",
+        "studentClass": "6th",
+        "createdAt": "2026-02-22T09:55:12.811Z",
+        "updatedAt": "2026-02-22T09:55:12.811Z",
+        "__v": 0
+    }
+]

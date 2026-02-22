@@ -1,0 +1,38 @@
+/* StudentsList.css */
+.student-list {
+  width: 95%;
+  margin: 30px auto;
+  overflow-x: auto;
+}
+
+.student-list h3 {
+  color: #0d47a1;
+  text-align: center;
+}
+
+.student-list table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.student-list th {
+  padding: 14px;
+  text-align: left;
+  color: white;
+  background: linear-gradient(90deg, #0d47a1, #1976d2);
+}
+
+.student-list td {
+  padding: 12px;
+  background: rgba(255,255,255,0.9);
+  border-bottom: 1px solid #eee;
+}
+
+.student-list tr:hover td {
+  background: #f0f9ff;
+}

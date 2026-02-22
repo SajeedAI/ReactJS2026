@@ -1,0 +1,86 @@
+/* StudentProfile.css */
+.profile-form {
+  width: 90%;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 25px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.profile-form h3 {
+  text-align: center;
+  color: #0d47a1;
+}
+
+.profile-form input[type="file"] {
+  margin-bottom: 10px;
+}
+
+.profile-form input {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: rgba(255,255,255,0.8);
+  transition: 0.3s;
+}
+
+.profile-form input:focus {
+  box-shadow: 0 0 0 2px #00e5ff;
+}
+
+.profile-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  background: linear-gradient(90deg, #0d47a1, #00e5ff);
+  color: white;
+  transition: 0.3s;
+}
+
+.profile-form button:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+.student-list {
+  width: 100%;
+  margin-top: 20px;
+  overflow-x: auto;
+}
+
+.student-list table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.student-list th {
+  padding: 14px;
+  text-align: left;
+  color: white;
+  background: linear-gradient(90deg, #0d47a1, #1976d2);
+}
+
+.student-list td {
+  padding: 12px;
+  background: rgba(255,255,255,0.9);
+  border-bottom: 1px solid #eee;
+}
+
+.student-list tr:hover td {
+  background: #f0f9ff;
+}
